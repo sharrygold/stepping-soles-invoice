@@ -1,0 +1,165 @@
+/* Stepping Soles Invoice Generator — Global Styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f9f6f3;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav */
+.app-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #ede9e4;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.03);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.app-nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-nav-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.app-nav-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #2d2319;
+}
+
+.app-nav-tabs {
+  display: flex;
+  gap: 4px;
+  background: #f5f1ed;
+  padding: 3px;
+  border-radius: 10px;
+}
+
+.nav-tab {
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8a7b6b;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-tab.active {
+  background: #ffffff;
+  color: #2d2319;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.nav-tab:hover:not(.active) {
+  color: #5a4d40;
+}
+
+.nav-badge {
+  background: #2d2319;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+}
+
+/* Main Content */
+.app-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  padding: 32px 20px;
+}
+
+/* Hidden render area for PDF */
+.invoice-render-area {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  z-index: -1;
+}
+
+/* Loading Overlay */
+.generating-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(45, 35, 25, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  gap: 16px;
+}
+
+.generating-overlay p {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.generating-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .app-main {
+    padding: 20px 12px;
+  }
+}

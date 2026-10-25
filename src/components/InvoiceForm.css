@@ -1,0 +1,454 @@
+/* Invoice Form Styles */
+
+.form-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    max-width: 700px;
+    width: 100%;
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #f0ece8;
+}
+
+.form-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.form-invoice-number-input {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8a7b6b;
+    background: #f5f1ed;
+    padding: 6px 14px;
+    border-radius: 20px;
+    border: 1.5px solid transparent;
+    width: 110px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.form-invoice-number-input:focus {
+    outline: none;
+    border-color: #8a7b6b;
+    background: #fff;
+}
+
+.form-section {
+    margin-bottom: 24px;
+}
+
+.form-section h3 {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #8a7b6b;
+    margin-bottom: 14px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #666;
+}
+
+.form-group input {
+    padding: 10px 14px;
+    border: 1.5px solid #e0dcd8;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #8a7b6b;
+    box-shadow: 0 0 0 3px rgba(138, 123, 107, 0.1);
+    background: #fff;
+}
+
+/* Items Table */
+.items-table {
+    border: 1.5px solid #e0dcd8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.items-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: #f5f1ed;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8a7b6b;
+}
+
+.items-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border-top: 1px solid #f0ece8;
+}
+
+.item-col-name {
+    flex: 2;
+}
+
+.item-col-qty {
+    flex: 0 0 65px;
+    text-align: center;
+}
+
+.item-col-amount {
+    flex: 0 0 130px;
+    text-align: right;
+}
+
+.item-col-line {
+    flex: 0 0 110px;
+    text-align: right;
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+}
+
+.item-col-action {
+    flex: 0 0 36px;
+    text-align: center;
+}
+
+.items-row input {
+    padding: 8px 10px;
+    border: 1.5px solid #e0dcd8;
+    border-radius: 6px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #fafafa;
+    transition: border-color 0.2s;
+}
+
+.items-row input:focus {
+    outline: none;
+    border-color: #8a7b6b;
+    background: #fff;
+}
+
+.items-row input[type='number'] {
+    text-align: center;
+}
+
+.item-remove-btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: #f5f1ed;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s;
+}
+
+.item-remove-btn:hover:not(:disabled) {
+    background: #e8e0d8;
+    color: #c0392b;
+}
+
+.item-remove-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.add-item-btn {
+    margin-top: 12px;
+    padding: 8px 18px;
+    border: 1.5px dashed #c5bdb3;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: #8a7b6b;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.add-item-btn:hover {
+    background: #f5f1ed;
+    border-color: #8a7b6b;
+}
+
+/* Discount */
+.discount-section {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1.5px dashed #e0dcd8;
+}
+
+.discount-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.discount-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+    min-width: 65px;
+}
+
+.discount-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.discount-type-select {
+    padding: 8px 10px;
+    border: 1.5px solid #e0dcd8;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #fafafa;
+    cursor: pointer;
+    appearance: auto;
+    min-width: 54px;
+}
+
+.discount-type-select:focus {
+    outline: none;
+    border-color: #8a7b6b;
+    background: #fff;
+}
+
+.discount-input {
+    padding: 8px 10px;
+    border: 1.5px solid #e0dcd8;
+    border-radius: 8px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+    background: #fafafa;
+    width: 100px;
+    text-align: center;
+    transition: border-color 0.2s;
+}
+
+.discount-input:focus {
+    outline: none;
+    border-color: #8a7b6b;
+    background: #fff;
+}
+
+.discount-preview {
+    font-size: 13px;
+    font-weight: 500;
+    color: #c0392b;
+    margin-left: auto;
+}
+
+/* Totals */
+.form-totals {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 2px solid #f0ece8;
+}
+
+.form-subtotal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.form-discount-line {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    font-size: 13px;
+    color: #c0392b;
+    margin-bottom: 6px;
+}
+
+.form-discount-amount {
+    font-weight: 500;
+}
+
+.form-total {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.form-total-amount {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d2319;
+}
+
+/* Actions */
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 2px solid #f0ece8;
+}
+
+.btn-primary {
+    padding: 12px 28px;
+    background: #2d2319;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #1a1510;
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    padding: 12px 28px;
+    background: transparent;
+    color: #8a7b6b;
+    border: 1.5px solid #d5cec6;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #f5f1ed;
+}
+
+.btn-outline {
+    padding: 12px 28px;
+    background: transparent;
+    color: #2d2319;
+    border: 1.5px solid #2d2319;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s, transform 0.1s;
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: #f5f1ed;
+    transform: translateY(-1px);
+}
+
+.btn-outline:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .items-header {
+        display: none;
+    }
+
+    .items-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .item-col-name {
+        flex: 1 1 100%;
+    }
+
+    .item-col-qty,
+    .item-col-amount {
+        flex: 1;
+    }
+
+    .item-col-line {
+        flex: 1;
+        text-align: left;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}

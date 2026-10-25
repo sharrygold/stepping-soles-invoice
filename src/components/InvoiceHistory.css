@@ -1,0 +1,179 @@
+/* Invoice History Styles */
+
+.history-container {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    max-width: 700px;
+    width: 100%;
+}
+
+.history-container h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #1a1a1a;
+    margin: 0 0 4px;
+}
+
+.history-count {
+    font-size: 13px;
+    color: #8a7b6b;
+    margin-bottom: 20px;
+}
+
+.history-empty {
+    text-align: center;
+    padding: 48px 20px;
+    color: #999;
+}
+
+.history-empty-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.history-empty p {
+    font-size: 15px;
+    margin: 0;
+    color: #666;
+}
+
+.history-empty-sub {
+    font-size: 13px !important;
+    color: #aaa !important;
+    margin-top: 6px !important;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.history-card {
+    border: 1.5px solid #ede9e4;
+    border-radius: 10px;
+    padding: 16px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.history-card:hover {
+    border-color: #c5bdb3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.history-card-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.history-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.history-invoice-number {
+    font-size: 14px;
+    font-weight: 600;
+    color: #2d2319;
+}
+
+.history-buyer-name {
+    font-size: 13px;
+    color: #666;
+}
+
+.history-card-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.history-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.history-amount {
+    font-size: 15px;
+    font-weight: 700;
+    color: #2d2319;
+}
+
+.history-card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.history-view-btn {
+    padding: 6px 16px;
+    background: #2d2319;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+}
+
+.history-view-btn:hover {
+    background: #1a1510;
+}
+
+.history-image-btn {
+    padding: 6px 16px;
+    background: transparent;
+    color: #2d2319;
+    border: 1.5px solid #2d2319;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+}
+
+.history-image-btn:hover {
+    background: #f5f1ed;
+}
+
+.history-delete-btn {
+    padding: 6px 16px;
+    background: transparent;
+    color: #c0392b;
+    border: 1.5px solid #e8d5d2;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background 0.2s;
+}
+
+.history-delete-btn:hover {
+    background: #fdf2f2;
+}
+
+@media (max-width: 768px) {
+    .history-container {
+        padding: 20px;
+    }
+
+    .history-card-main {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .history-card-meta {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 12px;
+    }
+}
