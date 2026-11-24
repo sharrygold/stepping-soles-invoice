@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 import './InvoiceForm.css';
 
-// Default payment details come from .env.local (kept out of Git), so no bank details live in the code.
-const DEFAULT_ACCOUNT_NUMBER = import.meta.env.VITE_ACCOUNT_NUMBER || '';
-const DEFAULT_BANK_NAME = import.meta.env.VITE_BANK_NAME || '';
-const DEFAULT_ACCOUNT_NAME = import.meta.env.VITE_ACCOUNT_NAME || '';
-
 export default function InvoiceForm({ initialInvoiceNumber, onGenerate, onGenerateImage }) {
     const [invoiceNumber, setInvoiceNumber] = useState(initialInvoiceNumber);
     const [buyerName, setBuyerName] = useState('');
@@ -14,9 +9,9 @@ export default function InvoiceForm({ initialInvoiceNumber, onGenerate, onGenera
     const [items, setItems] = useState([{ name: '', qty: 1, amount: '' }]);
     const [discountType, setDiscountType] = useState('percent'); // 'percent' or 'fixed'
     const [discountValue, setDiscountValue] = useState('');
-    const [accountNumber, setAccountNumber] = useState(DEFAULT_ACCOUNT_NUMBER);
-    const [bankName, setBankName] = useState(DEFAULT_BANK_NAME);
-    const [accountName, setAccountName] = useState(DEFAULT_ACCOUNT_NAME);
+    const [accountNumber, setAccountNumber] = useState('');
+    const [bankName, setBankName] = useState('');
+    const [accountName, setAccountName] = useState('');
 
     useEffect(() => {
         setInvoiceNumber(initialInvoiceNumber);
@@ -89,9 +84,9 @@ export default function InvoiceForm({ initialInvoiceNumber, onGenerate, onGenera
         setItems([{ name: '', qty: 1, amount: '' }]);
         setDiscountType('percent');
         setDiscountValue('');
-        setAccountNumber(DEFAULT_ACCOUNT_NUMBER);
-        setBankName(DEFAULT_BANK_NAME);
-        setAccountName(DEFAULT_ACCOUNT_NAME);
+        setAccountNumber('');
+        setBankName('');
+        setAccountName('');
     };
 
     return (
