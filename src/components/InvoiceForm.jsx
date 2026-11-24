@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getPaymentDetails, savePaymentDetails } from '../utils/invoiceStorage';
 import './InvoiceForm.css';
 
 export default function InvoiceForm({ initialInvoiceNumber, onGenerate, onGenerateImage }) {
@@ -9,9 +10,9 @@ export default function InvoiceForm({ initialInvoiceNumber, onGenerate, onGenera
     const [items, setItems] = useState([{ name: '', qty: 1, amount: '' }]);
     const [discountType, setDiscountType] = useState('percent'); // 'percent' or 'fixed'
     const [discountValue, setDiscountValue] = useState('');
-    const [accountNumber, setAccountNumber] = useState('');
-    const [bankName, setBankName] = useState('');
-    const [accountName, setAccountName] = useState('');
+    const [accountNumber, setAccountNumber] = useState(() => getPaymentDetails().accountNumber);
+    const [bankName, setBankName] = useState(() => getPaymentDetails().bankName);
+    const [accountName, setAccountName] = useState(() => getPaymentDetails().accountName);
 
     useEffect(() => {
         setInvoiceNumber(initialInvoiceNumber);
@@ -68,15 +69,20 @@ export default function InvoiceForm({ initialInvoiceNumber, onGenerate, onGenera
 
     const handleGenerate = () => {
         if (!isValid) return;
-        onGenerate(buildFormData());
+        const data = buildFormData();
+        savePaymentDetails(data.paymentDetails);
+        onGenerate(data);
     };
 
     const handleGenerateImg = () => {
         if (!isValid) return;
-        onGenerateImage(buildFormData());
+        const data = buildFormData();
+        savePaymentDetails(data.paymentDetails);
+        onGenerateImage(data);
     };
 
     const handleReset = () => {
+        const saved = getPaymentDetails();
         setInvoiceNumber(initialInvoiceNumber);
         setBuyerName('');
         setBuyerPhone('');
@@ -84,9 +90,9 @@ export default function InvoiceForm({ initialInvoiceNumber, onGenerate, onGenera
         setItems([{ name: '', qty: 1, amount: '' }]);
         setDiscountType('percent');
         setDiscountValue('');
-        setAccountNumber('');
-        setBankName('');
-        setAccountName('');
+        setAccountNumber(saved.accountNumber);
+        setBankName(saved.bankName);
+        setAccountName(saved.accountName);
     };
 
     return (

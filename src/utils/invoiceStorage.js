@@ -2,6 +2,7 @@
 
 const INVOICES_KEY = 'stepping_soles_invoices';
 const COUNTER_KEY = 'stepping_soles_invoice_counter';
+const PAYMENT_KEY = 'stepping_soles_payment_details';
 
 export function updateInvoiceCounter(invNumStr) {
   const match = invNumStr.match(/\d+/);
@@ -47,4 +48,28 @@ export function getInvoiceById(id) {
 export function deleteInvoice(id) {
   const invoices = getInvoices().filter((inv) => inv.id !== id);
   localStorage.setItem(INVOICES_KEY, JSON.stringify(invoices));
+}
+
+const EMPTY_PAYMENT = { accountNumber: '', bankName: '', accountName: '' };
+
+// Bank details are remembered only in this browser, never in the code.
+export function getPaymentDetails() {
+  try {
+    return { ...EMPTY_PAYMENT, ...JSON.parse(localStorage.getItem(PAYMENT_KEY) || '{}') };
+  } catch {
+    return EMPTY_PAYMENT;
+  }
+}
+
+// Downloading with all three fields empty forgets the saved details.
+export function savePaymentDetails(details) {
+  try {
+    if (Object.values(details).some(Boolean)) {
+      localStorage.setItem(PAYMENT_KEY, JSON.stringify(details));
+    } else {
+      localStorage.removeItem(PAYMENT_KEY);
+    }
+  } catch {
+    // Storage blocked or full: the invoice still downloads.
+  }
 }

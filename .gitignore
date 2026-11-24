@@ -28,3 +28,4 @@ dist-ssr
 .env.local
 public/signature.png
 public/signature_old.png
+private/

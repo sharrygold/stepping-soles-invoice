@@ -14,7 +14,7 @@ Every order needed an invoice, and each one was typed from scratch: buyer detail
 
 - **One form for everything:** buyer name, phone and address, as many items as the order needs, and an optional discount (percentage or fixed amount)
 - **Totals done for you:** line totals, discount and the final naira total update as you type
-- **Payment details on every invoice:** bank details go on the invoice, so the buyer always knows where to pay
+- **Payment details remembered:** the owner types her bank details once and they're saved on her device only, so they never sit in the public code
 - **Branded output:** each invoice uses the Stepping Soles logo, colours and contact details, and downloads as a PDF or a PNG image
 - **Numbered and saved:** invoices are numbered automatically (INV-0001, INV-0002…) and kept in a History tab, where they can be downloaded again or deleted
 
